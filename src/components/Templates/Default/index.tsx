@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-empty-function */
 import { LeftMenu } from "../../LeftMenu";
 import { NavBar } from "../../NavBar";
 import { DefaultTemplateProps } from "./types";

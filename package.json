@@ -11,19 +11,21 @@
     "test:coverage": "jest --coverage --config=jest.config.js"
   },
   "dependencies": {
-    "axios": "^0.21.1",
-    "next": "10.2.3",
-    "react": "17.0.2",
-    "react-dom": "17.0.2",
     "@material-ui/core": "latest",
-    "clsx": "latest",
     "@material-ui/icons": "^4.9.1",
-    "@material-ui/lab": "^4.0.0-alpha.56"
+    "@material-ui/lab": "^4.0.0-alpha.56",
+    "axios": "^0.21.1",
+    "clsx": "latest",
+    "next": "10.2.3",
+    "nookies": "^2.5.2",
+    "react": "17.0.2",
+    "react-dom": "17.0.2"
   },
   "devDependencies": {
     "@testing-library/dom": "^7.31.0",
     "@testing-library/jest-dom": "^5.12.0",
     "@testing-library/react": "^11.2.7",
+    "@types/cookie": "^0.4.0",
     "@types/jest": "^26.0.23",
     "@types/node": "^15.6.1",
     "@types/react": "^17.0.8",

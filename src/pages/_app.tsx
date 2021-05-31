@@ -1,8 +1,8 @@
-import CssBaseline from "@material-ui/core/CssBaseline";
-import { ThemeProvider } from "@material-ui/core/styles";
-import Head from "next/head";
 import React from "react";
-import { theme } from "../components/Theme";
+import Head from "next/head";
+
+import Theme from "../components/Theme";
+import { UserProvider } from "../containers/UserProvider";
 
 export default function MyApp(props) {
   const { Component, pageProps } = props;
@@ -23,10 +23,11 @@ export default function MyApp(props) {
           content="minimum-scale=1, initial-scale=1, width=device-width"
         />
       </Head>
-      <ThemeProvider theme={theme}>
-        <CssBaseline />
-        <Component {...pageProps} />
-      </ThemeProvider>
+      <UserProvider>
+        <Theme>
+          <Component {...pageProps} />
+        </Theme>
+      </UserProvider>
     </React.Fragment>
   );
 }
