@@ -66,21 +66,21 @@ export const LeftMenu = React.memo(
         </div>
         <Divider />
         <List>
-          <ListItem button to="/schedule" key="Agenda">
+          <ListItem button key="Agenda">
             <ListItemIcon>
               <DateRange />
             </ListItemIcon>
             <ListItemText primary="Agenda" />
           </ListItem>
 
-          <ListItem button to="/patients" key="Pacientes">
+          <ListItem button key="Pacientes">
             <ListItemIcon>
               <LibraryBooks />
             </ListItemIcon>
             <ListItemText primary="Pacientes" />
           </ListItem>
 
-          <ListItem button to="/auth" key="Sair">
+          <ListItem button key="Sair">
             <ListItemIcon>
               <PowerSettingsNew />
             </ListItemIcon>
