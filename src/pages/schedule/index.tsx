@@ -4,6 +4,7 @@ import FeatureSchedule from "../../features/Schedule";
 import { useUser } from "../../hooks/User";
 import { format } from "date-fns";
 import { RightMenu } from "../../components/RightMenu";
+import { FeatureScheduleRegister } from "../../features/ScheduleRegister";
 
 export interface callendarPlugin {
   endDate: string;
@@ -53,15 +54,14 @@ export default function Schedule() {
       <FeatureSchedule handleSelect={handleSelect} />
 
       <RightMenu expanded={rightMenu} handleRightMenu={handleRightMenu}>
-        teste
-        {/* <ProgramFeatureScheduleRegister
+        <FeatureScheduleRegister
           data={{
-            clerkId,
-            establishment: establishment.id,
+            clerkId: "aaaaa",
+            establishment: "23123",
             ...additionalData,
           }}
           externalCallback={handleSuccess}
-        /> */}
+        />
       </RightMenu>
     </DefaultTemplate>
   );
