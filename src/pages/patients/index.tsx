@@ -8,6 +8,7 @@ import { RightMenu } from "../../components/RightMenu";
 import { DefaultTemplate } from "../../components/Templates/Default";
 import FeatureListPatients from "../../features/ListPatients";
 import { useUser } from "../../hooks/User";
+import FeatureProfile from "../../features/Profile";
 
 const useStyles = makeStyles((theme) => ({
   fab: {
@@ -42,6 +43,11 @@ export default function Patients() {
     [rightMenu]
   );
 
+  const handleSuccess = useCallback(() => {
+    setRightMenu(!rightMenu);
+    router.push(`/patients`);
+  }, [rightMenu]);
+
   useEffect(() => {
     if (userId && !rightMenu) {
       setRightMenu(!rightMenu);
@@ -59,7 +65,14 @@ export default function Patients() {
       persistentLeftMenu={false}
     >
       <RightMenu expanded={rightMenu} handleRightMenu={handleRightMenu}>
-        {!!userId && <>teste {userId}</>}
+        {!!userId && (
+          <FeatureProfile
+            data={{
+              id: userId,
+            }}
+            externalCallback={handleSuccess}
+          />
+        )}
       </RightMenu>
       <FeatureListPatients handleSelect={handleSelect} />
 
