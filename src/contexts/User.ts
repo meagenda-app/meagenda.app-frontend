@@ -1,12 +1,13 @@
 import { createContext } from "react";
 
 export interface User {
-  loading?: boolean;
+  token?: string;
   user?: {
     name: string;
   };
   theme?: "dark" | "light";
   leftMenuExpanded?: boolean;
+  loading?: boolean;
 }
 
 export interface UserContextData {

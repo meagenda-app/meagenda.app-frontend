@@ -29,11 +29,11 @@ export const UserProvider = ({ children }: UserProviderProps): JSX.Element => {
   }
 
   useEffect(() => {
-    const { "meagenda.user": _user } = parseCookies();
+    const { "meagenda.user": user } = parseCookies();
 
-    if (_user) {
+    if (user) {
       setUser({
-        ...JSON.parse(_user),
+        ...JSON.parse(user),
         loading: false,
       });
     }
