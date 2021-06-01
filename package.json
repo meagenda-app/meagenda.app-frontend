@@ -11,11 +11,15 @@
     "test:coverage": "jest --coverage --config=jest.config.js"
   },
   "dependencies": {
+    "@devexpress/dx-react-core": "^2.7.5",
+    "@devexpress/dx-react-scheduler": "^2.7.5",
+    "@devexpress/dx-react-scheduler-material-ui": "^2.7.5",
     "@material-ui/core": "latest",
     "@material-ui/icons": "^4.9.1",
     "@material-ui/lab": "^4.0.0-alpha.56",
     "axios": "^0.21.1",
     "clsx": "latest",
+    "date-fns": "^2.22.1",
     "formik": "^2.2.8",
     "next": "10.2.3",
     "nookies": "^2.5.2",
