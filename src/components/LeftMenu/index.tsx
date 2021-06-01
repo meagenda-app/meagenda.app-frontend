@@ -8,10 +8,11 @@ import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import { DateRange, LibraryBooks, PowerSettingsNew } from "@material-ui/icons";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
-import { LeftMenuProps } from "./types";
 import clsx from "clsx";
 import React from "react";
+import ButtonLink from "../ButtonLink";
 import { useStyles } from "./styles";
+import { LeftMenuProps } from "./types";
 
 export const LeftMenu = React.memo(
   (
@@ -66,14 +67,19 @@ export const LeftMenu = React.memo(
         </div>
         <Divider />
         <List>
-          <ListItem button key="Agenda">
+          <ListItem button component={ButtonLink} href="/schedule" key="Agenda">
             <ListItemIcon>
               <DateRange />
             </ListItemIcon>
             <ListItemText primary="Agenda" />
           </ListItem>
 
-          <ListItem button key="Pacientes">
+          <ListItem
+            button
+            component={ButtonLink}
+            href="/patients"
+            key="Pacientes"
+          >
             <ListItemIcon>
               <LibraryBooks />
             </ListItemIcon>

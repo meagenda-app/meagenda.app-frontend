@@ -1,7 +1,5 @@
 import React from "react";
-
 import { DefaultTemplate } from "../../components/Templates/Default";
-import Teste from "../../components/Teste";
 import { useUser } from "../../hooks/User";
 
 export default function Login() {
@@ -22,7 +20,6 @@ export default function Login() {
       persistentLeftMenu={false}
     >
       <h1>Login</h1>
-      <Teste />
     </DefaultTemplate>
   );
 }

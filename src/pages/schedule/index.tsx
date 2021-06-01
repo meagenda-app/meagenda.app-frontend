@@ -1,11 +1,9 @@
 import React from "react";
-
 import { DefaultTemplate } from "../../components/Templates/Default";
-import Teste from "../../components/Teste";
 import { useUser } from "../../hooks/User";
 
-export default function List() {
-  console.log("render List");
+export default function Schedule() {
+  console.log("render Schedule");
   const {
     user: { leftMenuExpanded },
     setUser,
@@ -21,8 +19,7 @@ export default function List() {
       leftMenuExpanded={leftMenuExpanded}
       persistentLeftMenu={false}
     >
-      List
-      <Teste />
+      Schedule
     </DefaultTemplate>
   );
 }
