@@ -4,7 +4,7 @@ import FeatureSchedule from "../../features/Schedule";
 import { useUser } from "../../hooks/User";
 import { format } from "date-fns";
 import { RightMenu } from "../../components/RightMenu";
-import { FeatureScheduleRegister } from "../../features/ScheduleRegister";
+import FeatureScheduleRegister from "../../features/ScheduleRegister";
 
 export interface callendarPlugin {
   endDate: string;

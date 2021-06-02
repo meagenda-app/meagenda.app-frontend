@@ -1,9 +1,10 @@
+import React, { useState } from "react";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import TextField from "@material-ui/core/TextField";
 import Autocomplete from "@material-ui/lab/Autocomplete";
+
 import { Patient, FeaturePatientAutocompleteProps } from "./types";
-import React, { useState } from "react";
-import PatientAutocompleteInput from "../PatientAutocompleteInput";
+import TextFieldWithEdit from "../../components/TextFieldWithEdit";
 
 const FeaturePatientAutocomplete = ({
   handleSelect,
@@ -46,7 +47,7 @@ const FeaturePatientAutocomplete = ({
   return (
     <>
       {defaultValue && !edit ? (
-        <PatientAutocompleteInput
+        <TextFieldWithEdit
           label={label}
           defaultValue={defaultValue}
           handleEdit={setEdit}

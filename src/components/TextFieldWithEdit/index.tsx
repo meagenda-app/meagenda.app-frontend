@@ -2,19 +2,16 @@ import TextField from "@material-ui/core/TextField";
 import IconButton from "@material-ui/core/IconButton";
 import Paper from "@material-ui/core/Paper";
 import EditIcon from "@material-ui/icons/Edit";
-import { Patient } from "./types";
 import React from "react";
+
+import { TextFieldWithEditProps } from "./types";
 import { useStyles } from "./styles";
 
-const FeaturePatientAutocompleteInput = ({
+const TextFieldWithEdit = ({
   defaultValue,
   label = "",
   handleEdit,
-}: {
-  defaultValue: Partial<Patient> | string;
-  label?: string;
-  handleEdit: (e: boolean) => void;
-}) => {
+}: TextFieldWithEditProps) => {
   const classes = useStyles();
 
   return (
@@ -42,4 +39,4 @@ const FeaturePatientAutocompleteInput = ({
   );
 };
 
-export default FeaturePatientAutocompleteInput;
+export default TextFieldWithEdit;

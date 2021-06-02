@@ -16,7 +16,7 @@ import CircularProgress from "@material-ui/core/CircularProgress";
 import { useStyles } from "./styles";
 import FeatureTabs from "./FeatureTabs";
 import { Patient } from "../../types/Patient";
-import { FeatureProfileGeneralData } from "../ProfileGeneralData";
+import FormProfileGeneralData from "../form/ProfileGeneralData";
 
 function a11yProps(index: string | number) {
   return {
@@ -132,7 +132,7 @@ const FeatureProfile = ({ externalCallback, data: { id } }) => {
           </AppBar>
           <Divider />
           <FeatureTabs value={tab} index={0}>
-            <FeatureProfileGeneralData
+            <FormProfileGeneralData
               externalCallback={handleSuccess}
               initialValues={patient}
             />

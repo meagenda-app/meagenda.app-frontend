@@ -9,9 +9,9 @@ import React, { ChangeEvent, useCallback, useEffect, useState } from "react";
 import { FeatureScheduleRegisterTabPanel } from "./FeatureTabs";
 import { useStyles } from "./styles";
 import CircularProgress from "@material-ui/core/CircularProgress";
-import { FeatureScheduleRegisterForm } from "../ScheduleRegisterForm";
+import FormScheduleRegister from "../form/ScheduleRegister";
 
-export const FeatureScheduleRegister = ({
+const FeatureScheduleRegister = ({
   externalCallback,
   data: { startDate, endDate, clerkId, id, establishment },
 }: FeatureScheduleRegisterProps) => {
@@ -89,7 +89,7 @@ export const FeatureScheduleRegister = ({
           </AppBar>
           <Divider />
           <FeatureScheduleRegisterTabPanel value={value} index={0}>
-            <FeatureScheduleRegisterForm
+            <FormScheduleRegister
               externalCallback={handleSuccess}
               initialValues={
                 schedule
@@ -111,3 +111,5 @@ export const FeatureScheduleRegister = ({
     </>
   );
 };
+
+export default FeatureScheduleRegister;

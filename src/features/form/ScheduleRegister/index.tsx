@@ -2,20 +2,20 @@ import { Button, CircularProgress, Grid, TextField } from "@material-ui/core";
 import { Field, Form, Formik } from "formik";
 import React, { useState } from "react";
 import { formValidation } from "./validation";
-import { Patient, Schedule, FeatureScheduleRegisterFormProps } from "./types";
-import FeaturePatientAutocomplete from "../PatientAutocomplete";
+import { Patient, Schedule, FormScheduleRegisterProps } from "./types";
+import FeaturePatientAutocomplete from "../../PatientAutocomplete";
 
-export const FeatureScheduleRegisterForm = ({
+const FormScheduleRegister = ({
   initialValues,
   externalCallback,
-}: FeatureScheduleRegisterFormProps) => {
+}: FormScheduleRegisterProps) => {
   const [loading, setLoading] = useState<boolean>(false);
 
   const onSubmit = async (values: Schedule) => {
     setLoading(true);
 
     try {
-      // await programFeatureScheduleRegisterFormRequest({
+      // await programFormScheduleRegisterRequest({
       //   data: values,
       //   id: initialValues.id,
       // });
@@ -199,3 +199,5 @@ export const FeatureScheduleRegisterForm = ({
     </Formik>
   );
 };
+
+export default FormScheduleRegister;

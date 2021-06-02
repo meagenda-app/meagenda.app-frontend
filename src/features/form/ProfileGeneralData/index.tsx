@@ -2,12 +2,12 @@ import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import Grid from "@material-ui/core/Grid";
 import CircularProgress from "@material-ui/core/CircularProgress";
-import { FeatureProfileGeneralDataProps } from "./types";
+import { FormProfileGeneralDataProps } from "./types";
 import { Field, Form, Formik } from "formik";
 import React, { useState } from "react";
 import { formValidation } from "./validation";
 
-export const FeatureProfileGeneralData = ({
+const FormProfileGeneralData = ({
   initialValues = {
     firstName: "",
     lastName: "",
@@ -16,14 +16,14 @@ export const FeatureProfileGeneralData = ({
     dateOfBirth: "",
   },
   externalCallback,
-}: FeatureProfileGeneralDataProps) => {
+}: FormProfileGeneralDataProps) => {
   const [loading, setLoading] = useState<boolean>(false);
 
   const onSubmit = async (values: any) => {
     setLoading(true);
 
     try {
-      // await FeatureProfileGeneralDataRequest({
+      // await FormProfileGeneralDataRequest({
       //   data: values,
       //   id: values?.id,
       // });
@@ -204,3 +204,5 @@ export const FeatureProfileGeneralData = ({
     </Formik>
   );
 };
+
+export default FormProfileGeneralData;
