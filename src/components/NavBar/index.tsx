@@ -44,13 +44,14 @@ export const NavBar = React.memo(
           </IconButton>
 
           {!!props.title && (
-            <Hidden smDown>
-              <Typography variant="h6" noWrap style={{ marginRight: 15 }}>
-                {props.title}
-              </Typography>
-            </Hidden>
+            <Typography
+              variant="h6"
+              noWrap
+              style={{ marginRight: 15, flexGrow: 1 }}
+            >
+              {props.title}
+            </Typography>
           )}
-
           {props.children}
         </Toolbar>
       </AppBar>

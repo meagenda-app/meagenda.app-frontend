@@ -63,6 +63,7 @@ export default function Patients() {
       }
       leftMenuExpanded={leftMenuExpanded}
       persistentLeftMenu={false}
+      title="Pacientes"
     >
       <RightMenu expanded={rightMenu} handleRightMenu={handleRightMenu}>
         {!!userId && (

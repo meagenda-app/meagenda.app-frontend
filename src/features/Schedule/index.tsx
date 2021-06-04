@@ -67,6 +67,10 @@ const FeatureSchedule = ({ handleSelect }: FeatureScheduleProps) => {
     );
   };
 
+  const currentDateChange = (currentDate: any) => {
+    setState((currentData) => ({ ...currentData, currentDate }));
+  };
+
   return (
     <>
       {loading ? (
@@ -75,7 +79,10 @@ const FeatureSchedule = ({ handleSelect }: FeatureScheduleProps) => {
         </div>
       ) : (
         <Scheduler data={state.data} locale="pt-BR">
-          <ViewState currentDate={state.currentDate} />
+          <ViewState
+            currentDate={state.currentDate}
+            onCurrentDateChange={currentDateChange}
+          />
 
           <Toolbar />
           <DateNavigator />

@@ -4,7 +4,6 @@ import { DefaultTemplate } from "../components/Templates/Default";
 import { useUser } from "../hooks/User";
 
 export default function Index() {
-  console.log("render Index");
   const {
     user: { leftMenuExpanded },
     setUser,

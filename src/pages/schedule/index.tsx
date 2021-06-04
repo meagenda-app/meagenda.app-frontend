@@ -50,6 +50,7 @@ export default function Schedule() {
       }
       leftMenuExpanded={leftMenuExpanded}
       persistentLeftMenu={true}
+      title="Agenda"
     >
       <FeatureSchedule handleSelect={handleSelect} />
 

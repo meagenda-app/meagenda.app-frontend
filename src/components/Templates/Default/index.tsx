@@ -1,9 +1,11 @@
-import { LeftMenu } from "../../LeftMenu";
-import { NavBar } from "../../NavBar";
-import { DefaultTemplateProps } from "./types";
+import { Avatar, IconButton } from "@material-ui/core";
 import clsx from "clsx";
 import React from "react";
+import MenuUser from "../../../features/MenuUser";
+import { LeftMenu } from "../../LeftMenu";
+import { NavBar } from "../../NavBar";
 import { useStyles } from "./styles";
+import { DefaultTemplateProps } from "./types";
 
 export const DefaultTemplate = React.memo(
   (
@@ -12,6 +14,7 @@ export const DefaultTemplate = React.memo(
       persistentLeftMenu: false,
       leftMenuExpanded: true,
       handleLeftMenu: () => {},
+      title: "",
     }
   ) => {
     const classes = useStyles();
@@ -22,7 +25,10 @@ export const DefaultTemplate = React.memo(
           persistentLeftMenu={props.persistentLeftMenu}
           leftMenuExpanded={props.leftMenuExpanded}
           handleMenuLeft={props.handleLeftMenu}
-        />
+          title={props.title}
+        >
+          <MenuUser />
+        </NavBar>
         <LeftMenu
           persistentLeftMenu={props.persistentLeftMenu}
           expanded={props.leftMenuExpanded}

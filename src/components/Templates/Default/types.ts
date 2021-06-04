@@ -5,4 +5,5 @@ export interface DefaultTemplateProps {
   leftMenuExpanded?: boolean;
   persistentLeftMenu?: boolean;
   handleLeftMenu?: () => void;
+  title: string;
 }
