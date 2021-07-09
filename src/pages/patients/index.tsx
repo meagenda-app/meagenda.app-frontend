@@ -1,14 +1,12 @@
-import React, { useCallback, useEffect, useState } from "react";
-import { useRouter } from "next/router";
 import Fab from "@material-ui/core/Fab";
-import AddIcon from "@material-ui/icons/Add";
 import { makeStyles } from "@material-ui/core/styles";
-
-import { RightMenu } from "../../components/RightMenu";
-import { DefaultTemplate } from "../../components/Templates/Default";
-import FeatureListPatients from "../../features/ListPatients";
-import { useUser } from "../../hooks/User";
-import FeatureProfile from "../../features/Profile";
+import AddIcon from "@material-ui/icons/Add";
+import { useRouter } from "next/router";
+import React, { useCallback, useEffect, useState } from "react";
+import { RightMenu } from "../../packages/structure/RightMenu";
+import { DefaultTemplate } from "../../packages/structure/Default";
+import FeatureListPatients from "../../packages/patients/FeatureListPatients";
+import FeatureProfile from "../../packages/patients/FeatureProfile";
 
 const useStyles = makeStyles((theme) => ({
   fab: {
@@ -20,10 +18,6 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Patients() {
   const classes = useStyles();
-  const {
-    user: { leftMenuExpanded },
-    setUser,
-  } = useUser();
 
   const [rightMenu, setRightMenu] = useState<boolean>(false);
   const router = useRouter();
@@ -55,16 +49,7 @@ export default function Patients() {
   }, [userId]);
 
   return (
-    <DefaultTemplate
-      handleLeftMenu={() =>
-        setUser({
-          leftMenuExpanded: !leftMenuExpanded,
-        })
-      }
-      leftMenuExpanded={leftMenuExpanded}
-      persistentLeftMenu={false}
-      title="Pacientes"
-    >
+    <DefaultTemplate persistentLeftMenu={false} title="Pacientes">
       <RightMenu expanded={rightMenu} handleRightMenu={handleRightMenu}>
         {!!userId && (
           <FeatureProfile

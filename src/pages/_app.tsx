@@ -1,8 +1,8 @@
 import React from "react";
 import Head from "next/head";
 
-import Theme from "../components/Theme";
-import { UserProvider } from "../containers/UserProvider";
+import Theme from "../packages/structure/Theme";
+import { UserProvider } from "../contexts/provider/UserProvider";
 
 export default function MyApp(props) {
   const { Component, pageProps } = props;

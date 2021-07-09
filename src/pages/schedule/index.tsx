@@ -1,10 +1,9 @@
-import React, { useCallback, useState } from "react";
-import { DefaultTemplate } from "../../components/Templates/Default";
-import FeatureSchedule from "../../features/Schedule";
-import { useUser } from "../../hooks/User";
 import { format } from "date-fns";
-import { RightMenu } from "../../components/RightMenu";
-import FeatureScheduleRegister from "../../features/ScheduleRegister";
+import React, { useCallback, useState } from "react";
+import { RightMenu } from "../../packages/structure/RightMenu";
+import { DefaultTemplate } from "../../packages/structure/Default";
+import FeatureSchedule from "../../packages/schedule/FeatureSchedule";
+import FeatureScheduleRegister from "../../packages/schedule/FeatureScheduleRegister";
 
 export interface callendarPlugin {
   endDate: string;
@@ -14,11 +13,6 @@ export interface callendarPlugin {
 export default function Schedule() {
   const [additionalData, setAdditionalData] = useState<callendarPlugin>();
   const [rightMenu, setRightMenu] = useState<boolean>(false);
-
-  const {
-    user: { leftMenuExpanded },
-    setUser,
-  } = useUser();
 
   const handleSelect = useCallback(
     ({ startDate, endDate, ...rest }: callendarPlugin) => {
@@ -42,16 +36,7 @@ export default function Schedule() {
   }, [rightMenu]);
 
   return (
-    <DefaultTemplate
-      handleLeftMenu={() =>
-        setUser({
-          leftMenuExpanded: !leftMenuExpanded,
-        })
-      }
-      leftMenuExpanded={leftMenuExpanded}
-      persistentLeftMenu={true}
-      title="Agenda"
-    >
+    <DefaultTemplate persistentLeftMenu={true} title="Agenda">
       <FeatureSchedule handleSelect={handleSelect} />
 
       <RightMenu expanded={rightMenu} handleRightMenu={handleRightMenu}>
