@@ -61,7 +61,7 @@ const FormScheduleRegister = ({
                       label="Inicio"
                       fullWidth
                       color="secondary"
-                      error={!!errors.startDate}
+                      error={!!errors?.startDate}
                       helperText={"Este campo não pode ser editado"}
                     />
                   )}
@@ -78,7 +78,7 @@ const FormScheduleRegister = ({
                       label="Fim"
                       fullWidth
                       color="secondary"
-                      error={!!errors.endDate}
+                      error={!!errors?.endDate}
                       helperText={"Este campo não pode ser editado"}
                     />
                   )}
@@ -95,8 +95,8 @@ const FormScheduleRegister = ({
                       variant="filled"
                       fullWidth
                       color="secondary"
-                      error={!!errors.title}
-                      helperText={errors.title}
+                      error={!!errors?.title}
+                      helperText={errors?.title}
                     />
                   )}
                 </Field>
@@ -150,8 +150,8 @@ const FormScheduleRegister = ({
                       variant="filled"
                       fullWidth
                       color="secondary"
-                      error={!!errors.description}
-                      helperText={errors.description}
+                      error={!!errors?.description}
+                      helperText={errors?.description}
                       rows={6}
                       multiline
                     />
