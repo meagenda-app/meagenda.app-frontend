@@ -11,7 +11,7 @@ import { FeatureScheduleRegisterProps, Schedule } from "./types";
 import { useStyles } from "./styles";
 
 import { FeatureScheduleRegisterTabPanel } from "./FeatureTabs";
-import FormScheduleRegister from "../forms/ScheduleRegister";
+import FormScheduleRegister from "../forms/FormsScheduleRegister";
 
 const FeatureScheduleRegister = ({
   externalCallback,
