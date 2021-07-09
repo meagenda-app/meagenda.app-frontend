@@ -1,4 +1,4 @@
-import { Schedule as ScheduleBase } from "../../../types/Schedule";
+import { Schedule as ScheduleBase } from "../types/Schedule";
 
 // Components Props
 export interface FeatureScheduleRegisterProps {
