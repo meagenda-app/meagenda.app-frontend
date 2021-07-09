@@ -6,7 +6,6 @@ import { FormProfileGeneralDataProps } from "./types";
 import { Field, Form, Formik } from "formik";
 import React, { useState } from "react";
 import { formValidation } from "./validation";
-import { useUser } from "../../../../contexts/hooks/User";
 
 const FormProfileGeneralData = ({
   initialValues = {
@@ -19,7 +18,6 @@ const FormProfileGeneralData = ({
   externalCallback,
 }: FormProfileGeneralDataProps) => {
   const [loading, setLoading] = useState<boolean>(false);
-  const { setUser } = useUser();
 
   const onSubmit = async (values: any) => {
     setLoading(true);
@@ -40,15 +38,6 @@ const FormProfileGeneralData = ({
 
   return (
     <>
-      <div
-        type="button"
-        onClick={() => {
-          console.log("teste");
-          setUser({ token: "teste" });
-        }}
-      >
-        teste
-      </div>
       <Formik
         initialValues={initialValues}
         validationSchema={formValidation}
