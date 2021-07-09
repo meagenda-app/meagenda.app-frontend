@@ -1,4 +1,4 @@
-import { Patient } from "../packages/patients/types/Patient";
+import { Patient } from "../../patients/types/Patient";
 
 // Model
 export interface Schedule {
