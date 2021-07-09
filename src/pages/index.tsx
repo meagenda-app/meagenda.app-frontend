@@ -1,5 +1,5 @@
 import React from "react";
-import { DefaultTemplate } from "../components/Templates/Default";
+import { DefaultTemplate } from "../packages/structure/Default";
 
 export default function Index() {
   return (
