@@ -12,11 +12,17 @@ import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 import AccountIcon from "@material-ui/icons/AccountCircle";
 import React, { useState, useEffect, useCallback } from "react";
 import CircularProgress from "@material-ui/core/CircularProgress";
+import Button from "@material-ui/core/Button";
+import Accordion from "@material-ui/core/Accordion";
+import AccordionDetails from "@material-ui/core/AccordionDetails";
 
 import { useStyles } from "./styles";
 import FeatureTabs from "./FeatureTabs";
 import { Patient } from "../types/Patient";
 import FormProfileGeneralData from "../forms/ProfileGeneralData";
+import FeatureMedicalRecordsList from "../FeatureMedicalRecordsList";
+import { Handbook } from "../types/Handbook";
+import FormsMedicalRecords from "../forms/FormsMedicalRecords";
 
 function a11yProps(index: string | number) {
   return {
@@ -29,6 +35,10 @@ const FeatureProfile = ({ externalCallback, data: { id } }) => {
   const classes = useStyles();
 
   const [tab, setTab] = useState(0);
+
+  const [createMedicalRecord, setCreateMedicalRecord] = useState(false);
+  const [medicalRecord, setMedicalRecord] = useState<Handbook | null>();
+
   const [loading, setLoading] = useState(true);
   const [patient, setPatient] = useState<Patient>();
 
@@ -68,14 +78,10 @@ const FeatureProfile = ({ externalCallback, data: { id } }) => {
     setTab(newValue);
   };
 
-  // const handleSelectMedicalRecords = useCallback((handbook) => {
-  //   setCreateMedicalRecord(true);
-  //   setMedicalRecord(handbook);
-  // }, []);
-  //   const handleSelectMedicalRecords = (handbook) => {
-  //     setCreateMedicalRecord(true);
-  //     setMedicalRecord(handbook);
-  //   };
+  const handleSelectMedicalRecords = useCallback((handbook) => {
+    setCreateMedicalRecord(true);
+    setMedicalRecord(handbook);
+  }, []);
 
   return (
     <>
@@ -140,20 +146,21 @@ const FeatureProfile = ({ externalCallback, data: { id } }) => {
           {id !== "create" && (
             <>
               <FeatureTabs value={tab} index={1}>
-                medical records
-                {/* <div className={classes.space}>
+                <div className={classes.space}>
                   {createMedicalRecord ? (
-                    <ProgramFeatureProfileMedicalRecordsForm
-                      initialValues={{
-                        account: patient,
-                        ...medicalRecord,
-                      }}
-                      externalCallback={() => {
-                        setMedicalRecord({});
-                        setCreateMedicalRecord(false);
-                        programFeatureMedicalRecordListRequestRef.current.list();
-                      }}
-                    />
+                    <Accordion elevation={1}>
+                      <AccordionDetails classes={{ root: classes.fullwidth }}>
+                        <FormsMedicalRecords
+                          initialValues={{
+                            ...medicalRecord,
+                          }}
+                          externalCallback={() => {
+                            setMedicalRecord({});
+                            setCreateMedicalRecord(false);
+                          }}
+                        />
+                      </AccordionDetails>
+                    </Accordion>
                   ) : (
                     <Button
                       data-test="cancel"
@@ -168,12 +175,10 @@ const FeatureProfile = ({ externalCallback, data: { id } }) => {
                       Cadastrar novo
                     </Button>
                   )}
-                </div> */}
-                {/* <ProgramFeatureProfileMedicalRecordsList
-                  ref={programFeatureMedicalRecordListRequestRef}
-                  handleSelect={(e: Handbook) => handleSelectMedicalRecords(e)}
-                  initialValues={{ account: { id: patient.id } }}
-                /> */}
+                </div>
+                <FeatureMedicalRecordsList
+                  handleSelect={(e: any) => setMedicalRecord(e)}
+                />
               </FeatureTabs>
               <FeatureTabs value={tab} index={2}>
                 attachments
